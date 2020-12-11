@@ -11,6 +11,8 @@
     <script src="js/createPollPageController.js"></script>
     <script src="js/votePageView.js"></script>
     <script src="js/votePageController.js"></script>
+    <script src="js/poll.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -18,6 +20,7 @@
         Meny:
         <a href="javascript:changePage('vote')">stem</a>
         <a href="javascript:changePage('createVote')">lag poll</a>
+        <a href="javascript:changePage('allPolls')">alle poller</a>
     </div>
     <div id="app"></div>
 
@@ -28,6 +31,7 @@
             const page = model.app.currentPage;
             if (page === 'createPoll') updateViewCreateVotePage();
             else if (page === 'vote') updateViewVotePage();
+            else if (page === 'allPolls') updateViewPoll();
         }
 
         function changePage(page) {

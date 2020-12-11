@@ -1,4 +1,10 @@
 const model = {
+    options: {
+        upperRowOptions: '',
+        lowerRowOptions: '',
+    },
+
+
     app: {
         currentPoll: 1,
         loggedInUser: 'per',
