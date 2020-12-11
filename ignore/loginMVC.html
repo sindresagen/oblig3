@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="loginController.js"></script>
+</head>
+
+<body>
+    <div id="app">
+    </div>
+
+    <script>
+        // Model 
+        let screen = 'login';
+        let errorMessage = null;
+        let username = null;
+        let password = null;
+        let isLoggedIn = false;
+
+        // View
+        show();
+
+        function show() {
+            if (screen === 'login') showLoginForm();
+            else if (screen === 'main') showMainAppScreen();
+        }
+
+        function showLoginForm() {
+            document.getElementById('app').innerHTML = `
+                <div id="error" style="color: red">${errorMessage || ''}</div>
+                <input placeholder="brukernavn" 
+                       id="username" 
+                       type="txt" 
+                       oninput="username = this.value"
+                       value="${username || ''}" /><br />
+                <input placeholder="passord" 
+                       id="password" 
+                       type="password"  
+                       oninput="password = this.value"
+                       value="${password || ''}" /><br />
+                <button onclick="logIn()">Logg inn</button>
+            `;
+        }
+
+        function showMainAppScreen() {
+            document.getElementById('app').innerHTML = `
+               <small>Du er logget inn som ${username}</small>
+               <h1>Velkommen til Terjes superapp!</h1>
+            `;
+        }
+    </script>
+</body>
+
+</html>
