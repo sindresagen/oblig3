@@ -17,6 +17,18 @@ const model = {
         { username: 'espen', name: 'Espen', password: '123', isAdmin: true },
     ],
 
+    temporary: {
+        isOpen: '',
+        question: '', 
+        options: [],
+    },
+
+    newEditedValues: {
+        isOpen: '',
+        question: '',
+        options: [],
+    },
+
     inputs: {
         createPoll: {
             pollId: null,
